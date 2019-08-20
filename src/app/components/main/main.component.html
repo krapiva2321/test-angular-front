@@ -1,0 +1,28 @@
+<div class='main'>
+    <div class="col-12 main-breadcrumb">
+        <a (click)="openBookPage()" href="#">{{bookPageTitle}}</a> / <a (click)="openAuthorPage()" href="#">{{authorPageTitle}}</a>
+    </div>
+    <div *ngIf="this.page == true" class="card">
+        <div class="card-header">
+            <span class="main-title">{{bookTitle}}</span>
+            <app-create-book></app-create-book>
+        </div>
+        <div class="card-body">
+            <div class="col-12">
+                <app-search></app-search>
+            </div>
+            <div class="col-12">
+                <app-book-list></app-book-list>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="this.page == false" class="card">
+        <div class="card-header">
+            <span class="main-title">{{authorTitle}}</span>
+            <app-create-author></app-create-author>
+        </div>
+        <div class="card-body">
+            <app-author-list></app-author-list>
+        </div>
+    </div>
+</div>

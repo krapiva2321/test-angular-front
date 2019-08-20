@@ -1,0 +1,17 @@
+<accordion-group>
+        <div accordion-heading>
+            <span class="main-head-accordion">{{bookListService.bookLabels.name}}: {{book.name}}</span>
+            <span class="main-head-accordion">{{bookListService.bookLabels.author_id}}: {{authorService.getName(book.author_id)}}</span>
+            <span class="main-head-accordion">{{bookListService.bookLabels.count_page}}: {{book.count_page}}</span>
+            <span class="main-head-accordion">{{bookListService.bookLabels.lang}}: {{dataService.getLangName(book.lang)}}</span>
+            <span class="main-head-accordion">{{bookListService.bookLabels.genre}}: {{book.genre}}</span>
+        </div>
+        <ul>
+            <li>{{bookListService.bookLabels.name}}: {{book.name}}</li>
+            <li>{{bookListService.bookLabels.author_id}}: {{authorService.getName(book.author_id)}}</li>
+            <li>{{bookListService.bookLabels.count_page}}: {{book.count_page}}</li>
+            <li>{{bookListService.bookLabels.lang}}: {{dataService.getLangName(book.lang)}}</li>
+            <li>{{bookListService.bookLabels.genre}}: {{book.genre}}</li>
+            <li>{{bookListService.bookLabels.description}}: {{book.description}}</li>
+        </ul>
+</accordion-group>

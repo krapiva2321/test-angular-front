@@ -1,0 +1,3 @@
+<ul *ngIf="authorService.authorList.length > 0">
+    <li *ngFor="let author of authorService.authorList">{{author.name}}</li>
+</ul>

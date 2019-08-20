@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="form-group col-3">
+                <label>{{bookService.bookLabels.name}}</label>
+                <input type="text" id="name" [(ngModel)]="searchName" class="form-control"/>
+            </div>
+            <div class="col-3 form-group">
+                <label>{{bookService.bookLabels.author_id}}</label>
+                <ng-select
+                        [items]="authorList |async"
+                        [multiple]="true"
+                        [closeOnSelect]="false"
+                        [searchable]="false"
+                        bindLabel="name"
+                        placeholder="Выберете авторов"
+                        [(ngModel)]="selectedAuthor"
+                >
+                </ng-select>
+            </div>
+            <div class="col-3 form-group">
+                <label>{{bookService.bookLabels.lang}}</label>
+                <ng-select
+                        [items]="langList |async"
+                        [multiple]="true"
+                        [closeOnSelect]="false"
+                        [searchable]="false"
+                        bindLabel="name"
+                        placeholder="Выберете язык"
+                        [(ngModel)]="selectedLang"
+                >
+                </ng-select>
+            </div>
+            <div class="form-group col-2">
+                <label>{{bookService.bookLabels.count_page}}</label>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" id="count_from" [(ngModel)]="countFrom" class="form-control" placeholder="от"/>
+                    </div>
+
+                    <div class="col-6">
+                        <input type="text" id="count_to" [(ngModel)]="countTo" class="form-control" placeholder="до"/>
+                    </div>
+                </div>
+            </div>
+            <div class=" form-group col-1">
+                <button class="btn btn-info search-bottom" (click)="onSendParam()">Поиск</button>
+            </div>
+        </div>
+    </div>
+</div>
